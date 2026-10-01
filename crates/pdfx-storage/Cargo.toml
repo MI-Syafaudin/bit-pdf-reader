@@ -1,0 +1,14 @@
+[package]
+name = "pdfx-storage"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+pdfx-core.workspace = true
+rusqlite.workspace = true
+directories.workspace = true
+tracing.workspace = true
+thiserror.workspace = true
+serde.workspace = true

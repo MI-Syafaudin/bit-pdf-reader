@@ -1,0 +1,110 @@
+.TH PDFX 1 "October 2026" "PDFX 0.1.0" "User Commands"
+.SH NAME
+pdfx \- High-performance Terminal & CLI PDF Swiss Army Knife for Linux
+.SH SYNOPSIS
+.B pdfx
+[\fIOPTIONS\fR] [\fICOMMAND\fR]
+.SH DESCRIPTION
+\fBPDFX\fR is a lightweight, memory-efficient, keyboard-friendly Terminal & CLI application written in modern Rust for Linux.
+It provides comprehensive PDF management including merging, splitting, extraction, rotation, page reordering, compression, text extraction, OCR, and an interactive Ratatui TUI viewer.
+.SH OPTIONS
+.TP
+.BR \-d ", " \-\-debug
+Enable verbose debug logging.
+.TP
+.BR \-\-json
+Output result in machine-readable JSON format.
+.TP
+.BR \-h ", " \-\-help
+Print help information.
+.TP
+.BR \-V ", " \-\-version
+Print version information.
+.SH COMMANDS
+.TP
+.B open \fR[\fIFILE\fR]
+Launch the interactive Ratatui TUI PDF viewer.
+.TP
+.B info \fIFILE\fR
+Inspect document metadata, version, encryption, page dimensions, and page count.
+.TP
+.B merge \fIFILE1\fR \fIFILE2\fR... \fB\-o\fR \fIOUTPUT\fR
+Merge multiple PDF files into a single document atomically.
+.TP
+.B split \fIFILE\fR \fB\-p\fR \fIPAGES\fR [\fB\-o\fR \fIDIR\fR]
+Split a PDF into separate files by page range (e.g. '1-5', '1-2,3-4', 'odd', 'even').
+.TP
+.B extract \fIFILE\fR \fB\-p\fR \fIPAGES\fR \fB\-o\fR \fIOUTPUT\fR
+Extract specific page ranges into a new PDF document.
+.TP
+.B rotate \fIFILE\fR [\fB\-p\fR \fIPAGES\fR] [\fB\-a\fR \fIDEGREES\fR] \fB\-o\fR \fIOUTPUT\fR
+Rotate pages in a PDF document (allowed angles: 90, 180, 270 degrees).
+.TP
+.B delete \fIFILE\fR \fB\-p\fR \fIPAGES\fR \fB\-o\fR \fIOUTPUT\fR [\fB\-y\fR]
+Delete specific pages from a PDF document.
+.TP
+.B reorder \fIFILE\fR \fB\-s\fR \fIORDER\fR \fB\-o\fR \fIOUTPUT\fR
+Reorder document pages using 1-indexed comma-separated list (e.g. '3,1,2,4').
+.TP
+.B text \fIFILE\fR [\fB\-p\fR \fIPAGES\fR] [\fB\-f\fR \fIFORMAT\fR] [\fB\-o\fR \fIOUTPUT\fR]
+Extract text content (format: 'plain', 'json', or 'jsonl').
+.TP
+.B compress \fIFILE\fR \fB\-o\fR \fIOUTPUT\fR
+Optimize and compress PDF streams and prune unreferenced objects.
+.TP
+.B ocr \fIFILE\fR [\fB\-l\fR \fILANG\fR] [\fB\-p\fR \fIPAGES\fR] \fB\-o\fR \fIOUTPUT\fR
+Run OCR on scanned PDF pages to generate searchable Sandwich PDF.
+.TP
+.B clean [\fB\-\-history\fR] [\fB\-\-cache\fR] [\fB\-\-all\fR]
+Clean local SQLite history, completed job records, and temporary files.
+.TP
+.B completions \fISHELL\fR
+Generate shell completion scripts (bash, zsh, fish, powershell).
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+General error.
+.TP
+.B 2
+Invalid argument, syntax error, or page index out of bounds.
+.TP
+.B 3
+Input error (input file does not exist or unreadable).
+.TP
+.B 4
+Output error (permission denied or cannot write).
+.TP
+.B 5
+PDF engine error (corrupted structure or password required).
+.TP
+.B 6
+OCR engine error (Tesseract missing or execution failure).
+.TP
+.B 7
+Operation cancelled by user.
+.SH EXAMPLES
+.PP
+Launch interactive TUI viewer:
+.RS
+.B pdfx open document.pdf
+.RE
+.PP
+Inspect document structure in JSON:
+.RS
+.B pdfx \-\-json info report.pdf
+.RE
+.PP
+Merge multiple documents:
+.RS
+.B pdfx merge ch1.pdf ch2.pdf ch3.pdf \-o complete_book.pdf
+.RE
+.PP
+Extract text from odd pages to standard output:
+.RS
+.B pdfx text document.pdf \-p odd
+.RE
+.SH AUTHORS
+PDFX Contributors (Apache-2.0 License).

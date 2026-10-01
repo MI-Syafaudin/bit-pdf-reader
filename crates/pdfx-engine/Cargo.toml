@@ -1,0 +1,22 @@
+[package]
+name = "pdfx-engine"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+pdfx-core.workspace = true
+lopdf.workspace = true
+pdfium-render = { workspace = true, optional = true }
+image.workspace = true
+tempfile.workspace = true
+tracing.workspace = true
+thiserror.workspace = true
+
+[features]
+default = ["pdfium"]
+pdfium = ["dep:pdfium-render"]
+
+[dev-dependencies]
+pdfx-storage.workspace = true

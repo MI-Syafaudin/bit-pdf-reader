@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=PDFX
+Comment=High-Performance Terminal & CLI PDF Swiss Army Knife
+GenericName=PDF Viewer and Processor
+Exec=pdfx open %f
+Icon=application-pdf
+Terminal=true
+Type=Application
+Categories=Office;Viewer;Utility;ConsoleOnly;
+MimeType=application/pdf;
+Keywords=pdf;viewer;cli;tui;merge;split;ocr;reader;
+StartupNotify=false

@@ -1,0 +1,20 @@
+Source: pdfx
+Section: utils
+Priority: optional
+Maintainer: PDFX Contributors <info@pdfx.org>
+Build-Depends: debhelper-compat (= 13), cargo, rustc (>= 1.70.0)
+Standards-Version: 4.6.2
+Homepage: https://github.com/pdfx/pdfx
+
+Package: pdfx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: tesseract-ocr
+Suggests: tesseract-ocr-eng, tesseract-ocr-ind
+Description: High-performance Terminal & CLI PDF Swiss Army Knife for Linux
+ PDFX is a blazing-fast, terminal-native PDF tool designed for Linux.
+ It features a dual-mode interface: a scriptable POSIX CLI with clean exit
+ codes and an interactive dual-pane Ratatui TUI with 24-bit TrueColor rendering.
+ .
+ Core capabilities include merge, split, extract, rotate, reorder, compress,
+ text extraction, Tesseract OCR pipeline, bookmarks, and fast fuzzy navigation.

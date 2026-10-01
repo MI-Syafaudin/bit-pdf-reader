@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	cargo build --release --locked
+
+override_dh_auto_test:
+	cargo test --release --locked --workspace
+
+override_dh_auto_install:
+	install -Dm755 target/release/pdfx debian/pdfx/usr/bin/pdfx
+	install -Dm644 man/pdfx.1 debian/pdfx/usr/share/man/man1/pdfx.1
+	install -Dm644 dist/pdfx.desktop debian/pdfx/usr/share/applications/pdfx.desktop
+	install -Dm644 completions/pdfx.bash debian/pdfx/usr/share/bash-completion/completions/pdfx
+	install -Dm644 completions/_pdfx debian/pdfx/usr/share/zsh/vendor-completions/_pdfx
+	install -Dm644 completions/pdfx.fish debian/pdfx/usr/share/fish/vendor_completions.d/pdfx.fish

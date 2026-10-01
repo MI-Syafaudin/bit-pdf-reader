@@ -1,0 +1,19 @@
+[package]
+name = "pdfx-ocr"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+pdfx-core.workspace = true
+pdfx-engine.workspace = true
+tempfile.workspace = true
+image.workspace = true
+crossbeam-channel.workspace = true
+tracing.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+
+[dev-dependencies]
+lopdf.workspace = true

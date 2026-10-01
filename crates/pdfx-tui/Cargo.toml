@@ -1,0 +1,29 @@
+[package]
+name = "pdfx-tui"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "pdfx-tui"
+path = "src/main.rs"
+
+[dependencies]
+pdfx-core.workspace = true
+pdfx-engine.workspace = true
+pdfx-storage.workspace = true
+pdfx-ocr.workspace = true
+ratatui.workspace = true
+crossterm.workspace = true
+crossbeam-channel.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+lopdf.workspace = true
