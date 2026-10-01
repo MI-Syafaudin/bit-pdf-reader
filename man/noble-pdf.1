@@ -1,0 +1,88 @@
+.TH NOBLE-PDF 1 "October 2026" "Noble PDF Reader 0.1.0" "User Commands"
+.SH NAME
+noble-pdf, pdfx \- High-performance Terminal & CLI PDF Swiss Army Knife for Linux
+.SH SYNOPSIS
+.B noble-pdf
+[\fIOPTIONS\fR] [\fICOMMAND\fR]
+.SH DESCRIPTION
+\fBNoble PDF Reader\fR (binary: \fBnoble-pdf\fR, alias: \fBpdfx\fR) is a lightweight, memory-efficient, keyboard-friendly Terminal & CLI application written in modern Rust for Linux.
+It provides comprehensive PDF management including merging, splitting, extraction, rotation, page reordering, compression, text extraction, OCR, and an interactive Ratatui TUI viewer.
+.SH OPTIONS
+.TP
+.BR \-d ", " \-\-debug
+Enable verbose debug logging.
+.TP
+.BR \-\-json
+Output result in machine-readable JSON format.
+.TP
+.BR \-h ", " \-\-help
+Print help information.
+.TP
+.BR \-V ", " \-\-version
+Print version information.
+.SH COMMANDS
+.TP
+.B open \fR[\fIFILE\fR]
+Launch the interactive Ratatui TUI PDF viewer.
+.TP
+.B info \fIFILE\fR
+Inspect document metadata, version, encryption, page dimensions, and page count.
+.TP
+.B merge \fIFILE1\fR \fIFILE2\fR... \fB\-o\fR \fIOUTPUT\fR
+Merge multiple PDF files into a single document atomically.
+.TP
+.B split \fIFILE\fR \fB\-p\fR \fIPAGES\fR [\fB\-o\fR \fIDIR\fR]
+Split a PDF into separate files by page range (e.g. '1-5', '1-2,3-4', 'odd', 'even').
+.TP
+.B extract \fIFILE\fR \fB\-p\fR \fIPAGES\fR \fB\-o\fR \fIOUTPUT\fR
+Extract specific page ranges into a new PDF document.
+.TP
+.B rotate \fIFILE\fR [\fB\-p\fR \fIPAGES\fR] [\fB\-a\fR \fIDEGREES\fR] \fB\-o\fR \fIOUTPUT\fR
+Rotate specified pages clockwise by 90, 180, or 270 degrees.
+.TP
+.B delete \fIFILE\fR \fB\-p\fR \fIPAGES\fR \fB\-o\fR \fIOUTPUT\fR
+Delete specified pages from the PDF document.
+.TP
+.B reorder \fIFILE\fR \fB\-s\fR \fISEQUENCE\fR \fB\-o\fR \fIOUTPUT\fR
+Reorder or duplicate pages based on explicit sequence order.
+.TP
+.B text \fIFILE\fR [\fB\-p\fR \fIPAGES\fR] [\fB\-o\fR \fIOUTPUT\fR]
+Extract plain text from document pages to stdout or an output file.
+.TP
+.B compress \fIFILE\fR \fB\-o\fR \fIOUTPUT\fR
+Optimize and compress PDF content streams, removing duplicate objects.
+.TP
+.B ocr \fIFILE\fR [\fB\-p\fR \fIPAGES\fR] [\fB\-l\fR \fILANG\fR] [\fB\-o\fR \fIOUTPUT\fR]
+Run optical character recognition using Tesseract engine.
+.TP
+.B clean [\fB\-\-all\fR] [\fB\-\-stats\fR]
+Manage and clean SQLite local state database, bookmarks, and staging caches.
+.TP
+.B completions \fISHELL\fR
+Generate shell completion scripts (bash, zsh, fish, powershell).
+.SH EXAMPLES
+.PP
+Open interactive terminal viewer:
+.RS
+.B noble-pdf open document.pdf
+.RE
+.PP
+Inspect document structure in JSON:
+.RS
+.B noble-pdf \-\-json info report.pdf
+.RE
+.PP
+Merge multiple documents:
+.RS
+.B noble-pdf merge ch1.pdf ch2.pdf ch3.pdf \-o complete_book.pdf
+.RE
+.PP
+Extract text from odd pages to standard output:
+.RS
+.B noble-pdf text document.pdf \-p odd
+.RE
+.SH AUTHORS
+Noble PDF Reader was created and developed by Syafudin.
+Contributors: Noble PDF Reader Contributors (Apache-2.0 License).
+.SH CREDITS
+Powered by open-source technologies: Ratatui, Crossterm, lopdf, Tesseract OCR, Rusqlite, Clap, and Rayon.

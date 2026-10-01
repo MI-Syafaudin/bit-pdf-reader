@@ -13,7 +13,7 @@ pub fn render_help_modal(f: &mut Frame, area: Rect) {
 
     let help_text = vec![
         Line::from(vec![Span::styled(
-            "PDFX Keybindings & Navigation Cheatsheet",
+            "Noble PDF Reader — Navigation & Shortcuts",
             Style::default()
                 .fg(Color::Cyan)
                 .add_modifier(Modifier::BOLD),
@@ -67,6 +67,28 @@ pub fn render_help_modal(f: &mut Frame, area: Rect) {
         Line::from("  ? / F1                 : Toggle this help popup"),
         Line::from("  Esc / q                : Close popup / Return to Home / Quit"),
         Line::from("──────────────────────────────────────────────────"),
+        Line::from(vec![
+            Span::styled(
+                "Noble PDF Reader v0.1.0",
+                Style::default()
+                    .fg(Color::Cyan)
+                    .add_modifier(Modifier::BOLD),
+            ),
+            Span::raw(" | Created by "),
+            Span::styled(
+                "Syafudin",
+                Style::default()
+                    .fg(Color::Green)
+                    .add_modifier(Modifier::BOLD),
+            ),
+        ]),
+        Line::from(vec![
+            Span::styled("Powered by: ", Style::default().fg(Color::DarkGray)),
+            Span::styled(
+                "Ratatui, Crossterm, lopdf, Tesseract, SQLite",
+                Style::default().fg(Color::Gray),
+            ),
+        ]),
         Line::from(vec![Span::styled(
             "Press [Esc] or [q] to close this help window.",
             Style::default().fg(Color::DarkGray),

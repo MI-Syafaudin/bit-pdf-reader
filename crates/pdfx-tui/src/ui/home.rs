@@ -23,14 +23,14 @@ pub fn render_home(
     // Header
     let header_line = Line::from(vec![
         Span::styled(
-            " PDFX ",
+            " NOBLE PDF READER ",
             Style::default()
                 .bg(Color::Cyan)
                 .fg(Color::Black)
                 .add_modifier(Modifier::BOLD),
         ),
         Span::styled(
-            " High-Performance Terminal PDF Engine for Linux ",
+            " High-Performance Terminal PDF Engine for Linux — by Syafudin ",
             Style::default()
                 .fg(Color::White)
                 .add_modifier(Modifier::BOLD),

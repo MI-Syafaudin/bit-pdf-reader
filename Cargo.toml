@@ -12,8 +12,9 @@ members = [
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-authors = ["PDFX Contributors"]
+authors = ["Syafudin <info@noblepdf.org>", "Noble PDF Reader Contributors"]
 license = "Apache-2.0"
+
 
 [workspace.dependencies]
 pdfx-core = { path = "crates/pdfx-core" }

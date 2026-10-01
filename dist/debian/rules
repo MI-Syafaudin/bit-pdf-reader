@@ -11,9 +11,15 @@ override_dh_auto_test:
 	cargo test --release --locked --workspace
 
 override_dh_auto_install:
-	install -Dm755 target/release/pdfx debian/pdfx/usr/bin/pdfx
-	install -Dm644 man/pdfx.1 debian/pdfx/usr/share/man/man1/pdfx.1
-	install -Dm644 dist/pdfx.desktop debian/pdfx/usr/share/applications/pdfx.desktop
-	install -Dm644 completions/pdfx.bash debian/pdfx/usr/share/bash-completion/completions/pdfx
-	install -Dm644 completions/_pdfx debian/pdfx/usr/share/zsh/vendor-completions/_pdfx
-	install -Dm644 completions/pdfx.fish debian/pdfx/usr/share/fish/vendor_completions.d/pdfx.fish
+	install -Dm755 target/release/noble-pdf debian/noble-pdf/usr/bin/noble-pdf
+	install -Dm755 target/release/pdfx debian/noble-pdf/usr/bin/pdfx
+	install -Dm644 man/noble-pdf.1 debian/noble-pdf/usr/share/man/man1/noble-pdf.1
+	install -Dm644 man/pdfx.1 debian/noble-pdf/usr/share/man/man1/pdfx.1
+	install -Dm644 dist/noble-pdf.desktop debian/noble-pdf/usr/share/applications/noble-pdf.desktop
+	install -Dm644 dist/pdfx.desktop debian/noble-pdf/usr/share/applications/pdfx.desktop
+	install -Dm644 completions/pdfx.bash debian/noble-pdf/usr/share/bash-completion/completions/noble-pdf
+	install -Dm644 completions/pdfx.bash debian/noble-pdf/usr/share/bash-completion/completions/pdfx
+	install -Dm644 completions/_pdfx debian/noble-pdf/usr/share/zsh/vendor-completions/_noble-pdf
+	install -Dm644 completions/_pdfx debian/noble-pdf/usr/share/zsh/vendor-completions/_pdfx
+	install -Dm644 completions/pdfx.fish debian/noble-pdf/usr/share/fish/vendor_completions.d/noble-pdf.fish
+	install -Dm644 completions/pdfx.fish debian/noble-pdf/usr/share/fish/vendor_completions.d/pdfx.fish

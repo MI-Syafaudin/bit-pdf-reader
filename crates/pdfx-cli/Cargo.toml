@@ -9,8 +9,13 @@ license.workspace = true
 path = "src/lib.rs"
 
 [[bin]]
+name = "noble-pdf"
+path = "src/bin/noble-pdf.rs"
+
+[[bin]]
 name = "pdfx"
-path = "src/main.rs"
+path = "src/bin/pdfx.rs"
+
 
 [dependencies]
 pdfx-core.workspace = true

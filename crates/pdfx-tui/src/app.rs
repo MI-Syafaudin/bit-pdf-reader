@@ -63,7 +63,7 @@ impl App {
             recent_documents: Vec::new(),
             home_selected_idx: 0,
             current_file_path: None,
-            current_doc_title: "PDFX".to_string(),
+            current_doc_title: "Noble PDF Reader".to_string(),
             doc_handle: None,
             doc_metadata: None,
             view_state: None,

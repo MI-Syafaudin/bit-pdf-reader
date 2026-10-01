@@ -73,7 +73,7 @@ pub fn execute_info(file: &Path, json: bool) -> Result<(), PdfxError> {
         };
         print_json_success("info", &output);
     } else {
-        print_banner("PDFX Document Information");
+        print_banner("Noble PDF Reader — Document Information");
         print_kv("File:", file.display());
         print_kv("Page Count:", page_count);
         print_kv(

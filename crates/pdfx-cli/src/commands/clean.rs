@@ -30,7 +30,7 @@ pub fn execute_clean(history: bool, cache: bool, all: bool, json: bool) -> Resul
         };
         print_json_success("clean", &resp);
     } else {
-        println!("✓ PDFX storage cleanup completed:");
+        println!("✓ Noble PDF Reader storage cleanup completed:");
         if clear_hist {
             println!("  - Recent document history cleared");
             println!("  - {} finished job records removed", jobs_cleared);
