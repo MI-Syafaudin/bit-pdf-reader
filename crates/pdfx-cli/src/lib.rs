@@ -2,10 +2,10 @@ pub mod args;
 pub mod commands;
 pub mod output;
 
-use clap::Parser;
 use crate::args::{Cli, Commands};
 use crate::commands::*;
 use crate::output::print_json_error;
+use clap::Parser;
 use pdfx_core::errors::PdfxError;
 use std::process::exit;
 

@@ -30,7 +30,7 @@ pub fn render_home(
                 .add_modifier(Modifier::BOLD),
         ),
         Span::styled(
-            " High-Performance Terminal PDF Engine for Linux — by Syafudin ",
+            " High-Performance Terminal PDF Engine for Linux — by MI_Syafaudin ",
             Style::default()
                 .fg(Color::White)
                 .add_modifier(Modifier::BOLD),

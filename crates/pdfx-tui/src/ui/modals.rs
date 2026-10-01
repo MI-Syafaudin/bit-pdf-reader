@@ -76,7 +76,7 @@ pub fn render_help_modal(f: &mut Frame, area: Rect) {
             ),
             Span::raw(" | Created by "),
             Span::styled(
-                "Syafudin",
+                "MI_Syafaudin (github.com/MI-Syafaudin)",
                 Style::default()
                     .fg(Color::Green)
                     .add_modifier(Modifier::BOLD),

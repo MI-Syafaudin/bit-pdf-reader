@@ -1,4 +1,4 @@
-# Maintainer: Syafudin <info@noblepdf.org>
+# Maintainer: MI_Syafaudin <https://github.com/MI-Syafaudin>
 # Contributors: Noble PDF Reader Contributors
 pkgname=noble-pdf
 _binname=pdfx
@@ -6,7 +6,7 @@ pkgver=0.1.0
 pkgrel=1
 pkgdesc="Noble PDF Reader — High-performance Terminal & CLI PDF Swiss Army Knife for Linux"
 arch=('x86_64' 'aarch64')
-url="https://github.com/noble-pdf/noble-pdf-reader"
+url="https://github.com/MI-Syafaudin/noble-pdf-reader"
 license=('Apache-2.0')
 depends=('gcc-libs')
 optdepends=(

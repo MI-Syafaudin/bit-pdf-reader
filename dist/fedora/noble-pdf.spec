@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Noble PDF Reader — High-performance Terminal & CLI PDF Swiss Army Knife for Linux
 
 License:        Apache-2.0
-URL:            https://github.com/noble-pdf/noble-pdf-reader
+URL:            https://github.com/MI-Syafaudin/noble-pdf-reader
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  cargo
@@ -15,7 +15,7 @@ Suggests:       tesseract-langpack-eng
 Suggests:       tesseract-langpack-ind
 
 %description
-Noble PDF Reader (created by Syafudin) is a high-performance terminal & CLI PDF
+Noble PDF Reader (created by MI_Syafaudin) is a high-performance terminal & CLI PDF
 management and processing Swiss Army Knife for Linux written in modern Rust.
 It provides a dual-mode interface: an interactive dual-pane TUI powered by Ratatui
 and Crossterm, and a comprehensive scriptable CLI with strict POSIX exit codes and
@@ -60,5 +60,5 @@ install -Dm644 completions/pdfx.fish %{buildroot}%{_datadir}/fish/vendor_complet
 %{_datadir}/fish/vendor_completions.d/pdfx.fish
 
 %changelog
-* Thu Oct 01 2026 Syafudin <info@noblepdf.org> - 0.1.0-1
+* Thu Oct 01 2026 MI_Syafaudin <https://github.com/MI-Syafaudin> - 0.1.0-1
 - Initial release of Noble PDF Reader v0.1.0

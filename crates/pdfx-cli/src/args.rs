@@ -5,7 +5,7 @@ use std::path::PathBuf;
 #[command(
     name = "noble-pdf",
     bin_name = "noble-pdf",
-    author = "Syafudin & Noble PDF Reader Contributors",
+    author = "MI_Syafaudin <https://github.com/MI-Syafaudin> & Noble PDF Reader Contributors",
     version = "0.1.0",
     about = "Noble PDF Reader — High-Performance Terminal & CLI PDF Swiss Army Knife for Linux",
     long_about = "Noble PDF Reader provides robust PDF operations including merging, splitting, extraction, rotation, text extraction, OCR, compression, and an interactive TUI."

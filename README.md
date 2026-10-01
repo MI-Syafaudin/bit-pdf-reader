@@ -6,7 +6,7 @@
 [![Rust: 1.70+](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org)
 [![Platform: Linux](https://img.shields.io/badge/platform-Linux-lightgrey.svg)](https://kernel.org)
 [![Zero GUI Dependencies](https://img.shields.io/badge/gui-zero_dependencies-brightgreen.svg)]()
-[![Author: Syafudin](https://img.shields.io/badge/author-Syafudin-blueviolet.svg)]()
+[![Author: MI_Syafaudin](https://img.shields.io/badge/author-MI__Syafaudin-blueviolet.svg)](https://github.com/MI-Syafaudin)
 
 **Noble PDF Reader** (CLI binary: `noble-pdf`, alias: `pdfx`) is a blazingly fast, modern Rust-native PDF processor and viewer built specifically for Linux environments (CachyOS, Arch Linux, Ubuntu, Debian, Fedora, openSUSE). It provides a **Dual-Mode Interface**:
 
@@ -17,7 +17,7 @@
 
 ## 🎖️ Credits & Acknowledgements
 
-Noble PDF Reader was conceived, designed, and developed by **Syafudin** ([@syafudin](https://github.com/syafudin)).
+Noble PDF Reader was conceived, designed, and developed by **MI_Syafaudin** ([@MI-Syafaudin](https://github.com/MI-Syafaudin)).
 
 Special gratitude and credit is extended to the incredible Rust open-source ecosystem whose foundation makes Noble PDF Reader possible:
 
@@ -326,4 +326,4 @@ cargo fmt --check
 Noble PDF Reader is distributed under the terms of the **Apache License 2.0**.
 See [LICENSE](LICENSE) for full details.
 
-Copyright (c) 2026 Syafudin and Noble PDF Reader Contributors.
+Copyright (c) 2026 MI_Syafaudin and Noble PDF Reader Contributors.
