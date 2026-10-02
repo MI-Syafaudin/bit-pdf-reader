@@ -1,20 +1,20 @@
-Source: noble-pdf
+Source: bit-pdf
 Section: utils
 Priority: optional
 Maintainer: MI_Syafaudin <https://github.com/MI-Syafaudin>
 Build-Depends: debhelper-compat (= 13), cargo, rustc (>= 1.70.0)
 Standards-Version: 4.6.2
-Homepage: https://github.com/MI-Syafaudin/noble-pdf-reader
+Homepage: https://github.com/MI-Syafaudin/bit-pdf-reader
 
-Package: noble-pdf
+Package: bit-pdf
 Architecture: any
 Provides: pdfx
 Conflicts: pdfx
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: tesseract-ocr
 Suggests: tesseract-ocr-eng, tesseract-ocr-ind
-Description: Noble PDF Reader - High-performance Terminal & CLI PDF Swiss Army Knife
- Noble PDF Reader (created by MI_Syafaudin) is a blazing-fast, terminal-native
+Description: Bit PDF Reader - High-performance Terminal & CLI PDF Swiss Army Knife
+ Bit PDF Reader (created by MI_Syafaudin) is a blazing-fast, terminal-native
  PDF tool designed for Linux. It features a dual-mode interface: a scriptable
  POSIX CLI with clean exit codes and an interactive dual-pane Ratatui TUI
  with 24-bit TrueColor rendering.

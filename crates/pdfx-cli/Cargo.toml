@@ -9,8 +9,8 @@ license.workspace = true
 path = "src/lib.rs"
 
 [[bin]]
-name = "noble-pdf"
-path = "src/bin/noble-pdf.rs"
+name = "bit-pdf"
+path = "src/bin/bit-pdf.rs"
 
 [[bin]]
 name = "pdfx"

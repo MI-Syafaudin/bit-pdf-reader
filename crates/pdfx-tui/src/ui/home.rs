@@ -23,7 +23,7 @@ pub fn render_home(
     // Header
     let header_line = Line::from(vec![
         Span::styled(
-            " NOBLE PDF READER ",
+            " BIT PDF READER ",
             Style::default()
                 .bg(Color::Cyan)
                 .fg(Color::Black)

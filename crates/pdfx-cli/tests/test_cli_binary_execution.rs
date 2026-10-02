@@ -61,7 +61,7 @@ fn test_binary_help_and_version() {
     let output = Command::new(bin_path()).arg("--help").output().unwrap();
     assert!(output.status.success());
     let stdout = String::from_utf8_lossy(&output.stdout);
-    assert!(stdout.contains("Noble PDF Reader"));
+    assert!(stdout.contains("Bit PDF Reader"));
     assert!(stdout.contains("Commands:"));
 
     let ver_output = Command::new(bin_path()).arg("--version").output().unwrap();

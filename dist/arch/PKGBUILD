@@ -1,12 +1,12 @@
 # Maintainer: MI_Syafaudin <https://github.com/MI-Syafaudin>
-# Contributors: Noble PDF Reader Contributors
-pkgname=noble-pdf
+# Contributors: Bit PDF Reader Contributors
+pkgname=bit-pdf
 _binname=pdfx
 pkgver=0.1.0
 pkgrel=1
-pkgdesc="Noble PDF Reader — High-performance Terminal & CLI PDF Swiss Army Knife for Linux"
+pkgdesc="Bit PDF Reader — High-performance Terminal & CLI PDF Swiss Army Knife for Linux"
 arch=('x86_64' 'aarch64')
-url="https://github.com/MI-Syafaudin/noble-pdf-reader"
+url="https://github.com/MI-Syafaudin/bit-pdf-reader"
 license=('Apache-2.0')
 depends=('gcc-libs')
 optdepends=(
@@ -43,23 +43,23 @@ package() {
     cd "$pkgname-$pkgver"
 
     # Install binaries
-    install -Dm755 target/release/noble-pdf "$pkgdir/usr/bin/noble-pdf"
+    install -Dm755 target/release/bit-pdf "$pkgdir/usr/bin/bit-pdf"
     install -Dm755 target/release/pdfx "$pkgdir/usr/bin/pdfx"
 
     # Install manpages
-    install -Dm644 man/noble-pdf.1 "$pkgdir/usr/share/man/man1/noble-pdf.1"
+    install -Dm644 man/bit-pdf.1 "$pkgdir/usr/share/man/man1/bit-pdf.1"
     install -Dm644 man/pdfx.1 "$pkgdir/usr/share/man/man1/pdfx.1"
 
     # Install desktop entries
-    install -Dm644 dist/noble-pdf.desktop "$pkgdir/usr/share/applications/noble-pdf.desktop"
+    install -Dm644 dist/bit-pdf.desktop "$pkgdir/usr/share/applications/bit-pdf.desktop"
     install -Dm644 dist/pdfx.desktop "$pkgdir/usr/share/applications/pdfx.desktop"
 
     # Install shell completions
-    install -Dm644 completions/pdfx.bash "$pkgdir/usr/share/bash-completion/completions/noble-pdf"
+    install -Dm644 completions/bit-pdf.bash "$pkgdir/usr/share/bash-completion/completions/bit-pdf"
     install -Dm644 completions/pdfx.bash "$pkgdir/usr/share/bash-completion/completions/pdfx"
-    install -Dm644 completions/_pdfx "$pkgdir/usr/share/zsh/site-functions/_noble-pdf"
+    install -Dm644 completions/_bit-pdf "$pkgdir/usr/share/zsh/site-functions/_bit-pdf"
     install -Dm644 completions/_pdfx "$pkgdir/usr/share/zsh/site-functions/_pdfx"
-    install -Dm644 completions/pdfx.fish "$pkgdir/usr/share/fish/vendor_completions.d/noble-pdf.fish"
+    install -Dm644 completions/bit-pdf.fish "$pkgdir/usr/share/fish/vendor_completions.d/bit-pdf.fish"
     install -Dm644 completions/pdfx.fish "$pkgdir/usr/share/fish/vendor_completions.d/pdfx.fish"
 
     # Install license

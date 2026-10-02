@@ -1,8 +1,8 @@
-#compdef noble-pdf
+#compdef bit-pdf
 
 autoload -U is-at-least
 
-_noble-pdf() {
+_bit-pdf() {
     typeset -A opt_args
     typeset -a _arguments_options
     local ret=1
@@ -22,14 +22,14 @@ _noble-pdf() {
 '--help[Print help (see more with '\''--help'\'')]' \
 '-V[Print version]' \
 '--version[Print version]' \
-":: :_noble-pdf_commands" \
-"*::: :->noble-pdf" \
+":: :_bit-pdf_commands" \
+"*::: :->bit-pdf" \
 && ret=0
     case $state in
-    (noble-pdf)
+    (bit-pdf)
         words=($line[1] "${words[@]}")
         (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:noble-pdf-command-$line[1]:"
+        curcontext="${curcontext%:*:*}:bit-pdf-command-$line[1]:"
         case $line[1] in
             (open)
 _arguments "${_arguments_options[@]}" : \
@@ -205,7 +205,7 @@ _arguments "${_arguments_options[@]}" : \
 ;;
 (help)
 _arguments "${_arguments_options[@]}" : \
-":: :_noble-pdf__subcmd__help_commands" \
+":: :_bit-pdf__subcmd__help_commands" \
 "*::: :->help" \
 && ret=0
 
@@ -213,7 +213,7 @@ _arguments "${_arguments_options[@]}" : \
     (help)
         words=($line[1] "${words[@]}")
         (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:noble-pdf-help-command-$line[1]:"
+        curcontext="${curcontext%:*:*}:bit-pdf-help-command-$line[1]:"
         case $line[1] in
             (open)
 _arguments "${_arguments_options[@]}" : \
@@ -280,8 +280,8 @@ esac
 esac
 }
 
-(( $+functions[_noble-pdf_commands] )) ||
-_noble-pdf_commands() {
+(( $+functions[_bit-pdf_commands] )) ||
+_bit-pdf_commands() {
     local commands; commands=(
 'open:Open interactive PDF TUI viewer' \
 'info:Inspect document metadata, version, encryption, and page dimensions' \
@@ -298,35 +298,35 @@ _noble-pdf_commands() {
 'completions:Generate shell completion scripts (bash, zsh, fish, powershell)' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
-    _describe -t commands 'noble-pdf commands' commands "$@"
+    _describe -t commands 'bit-pdf commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__clean_commands] )) ||
-_noble-pdf__subcmd__clean_commands() {
+(( $+functions[_bit-pdf__subcmd__clean_commands] )) ||
+_bit-pdf__subcmd__clean_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf clean commands' commands "$@"
+    _describe -t commands 'bit-pdf clean commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__completions_commands] )) ||
-_noble-pdf__subcmd__completions_commands() {
+(( $+functions[_bit-pdf__subcmd__completions_commands] )) ||
+_bit-pdf__subcmd__completions_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf completions commands' commands "$@"
+    _describe -t commands 'bit-pdf completions commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__compress_commands] )) ||
-_noble-pdf__subcmd__compress_commands() {
+(( $+functions[_bit-pdf__subcmd__compress_commands] )) ||
+_bit-pdf__subcmd__compress_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf compress commands' commands "$@"
+    _describe -t commands 'bit-pdf compress commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__delete_commands] )) ||
-_noble-pdf__subcmd__delete_commands() {
+(( $+functions[_bit-pdf__subcmd__delete_commands] )) ||
+_bit-pdf__subcmd__delete_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf delete commands' commands "$@"
+    _describe -t commands 'bit-pdf delete commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__extract_commands] )) ||
-_noble-pdf__subcmd__extract_commands() {
+(( $+functions[_bit-pdf__subcmd__extract_commands] )) ||
+_bit-pdf__subcmd__extract_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf extract commands' commands "$@"
+    _describe -t commands 'bit-pdf extract commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help_commands] )) ||
-_noble-pdf__subcmd__help_commands() {
+(( $+functions[_bit-pdf__subcmd__help_commands] )) ||
+_bit-pdf__subcmd__help_commands() {
     local commands; commands=(
 'open:Open interactive PDF TUI viewer' \
 'info:Inspect document metadata, version, encryption, and page dimensions' \
@@ -343,121 +343,121 @@ _noble-pdf__subcmd__help_commands() {
 'completions:Generate shell completion scripts (bash, zsh, fish, powershell)' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
-    _describe -t commands 'noble-pdf help commands' commands "$@"
+    _describe -t commands 'bit-pdf help commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__clean_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__clean_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__clean_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__clean_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help clean commands' commands "$@"
+    _describe -t commands 'bit-pdf help clean commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__completions_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__completions_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__completions_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__completions_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help completions commands' commands "$@"
+    _describe -t commands 'bit-pdf help completions commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__compress_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__compress_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__compress_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__compress_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help compress commands' commands "$@"
+    _describe -t commands 'bit-pdf help compress commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__delete_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__delete_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__delete_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__delete_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help delete commands' commands "$@"
+    _describe -t commands 'bit-pdf help delete commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__extract_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__extract_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__extract_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__extract_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help extract commands' commands "$@"
+    _describe -t commands 'bit-pdf help extract commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__help_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__help_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__help_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__help_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help help commands' commands "$@"
+    _describe -t commands 'bit-pdf help help commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__info_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__info_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__info_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__info_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help info commands' commands "$@"
+    _describe -t commands 'bit-pdf help info commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__merge_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__merge_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__merge_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__merge_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help merge commands' commands "$@"
+    _describe -t commands 'bit-pdf help merge commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__ocr_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__ocr_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__ocr_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__ocr_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help ocr commands' commands "$@"
+    _describe -t commands 'bit-pdf help ocr commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__open_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__open_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__open_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__open_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help open commands' commands "$@"
+    _describe -t commands 'bit-pdf help open commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__reorder_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__reorder_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__reorder_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__reorder_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help reorder commands' commands "$@"
+    _describe -t commands 'bit-pdf help reorder commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__rotate_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__rotate_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__rotate_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__rotate_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help rotate commands' commands "$@"
+    _describe -t commands 'bit-pdf help rotate commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__split_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__split_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__split_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__split_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help split commands' commands "$@"
+    _describe -t commands 'bit-pdf help split commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__help__subcmd__text_commands] )) ||
-_noble-pdf__subcmd__help__subcmd__text_commands() {
+(( $+functions[_bit-pdf__subcmd__help__subcmd__text_commands] )) ||
+_bit-pdf__subcmd__help__subcmd__text_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf help text commands' commands "$@"
+    _describe -t commands 'bit-pdf help text commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__info_commands] )) ||
-_noble-pdf__subcmd__info_commands() {
+(( $+functions[_bit-pdf__subcmd__info_commands] )) ||
+_bit-pdf__subcmd__info_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf info commands' commands "$@"
+    _describe -t commands 'bit-pdf info commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__merge_commands] )) ||
-_noble-pdf__subcmd__merge_commands() {
+(( $+functions[_bit-pdf__subcmd__merge_commands] )) ||
+_bit-pdf__subcmd__merge_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf merge commands' commands "$@"
+    _describe -t commands 'bit-pdf merge commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__ocr_commands] )) ||
-_noble-pdf__subcmd__ocr_commands() {
+(( $+functions[_bit-pdf__subcmd__ocr_commands] )) ||
+_bit-pdf__subcmd__ocr_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf ocr commands' commands "$@"
+    _describe -t commands 'bit-pdf ocr commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__open_commands] )) ||
-_noble-pdf__subcmd__open_commands() {
+(( $+functions[_bit-pdf__subcmd__open_commands] )) ||
+_bit-pdf__subcmd__open_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf open commands' commands "$@"
+    _describe -t commands 'bit-pdf open commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__reorder_commands] )) ||
-_noble-pdf__subcmd__reorder_commands() {
+(( $+functions[_bit-pdf__subcmd__reorder_commands] )) ||
+_bit-pdf__subcmd__reorder_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf reorder commands' commands "$@"
+    _describe -t commands 'bit-pdf reorder commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__rotate_commands] )) ||
-_noble-pdf__subcmd__rotate_commands() {
+(( $+functions[_bit-pdf__subcmd__rotate_commands] )) ||
+_bit-pdf__subcmd__rotate_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf rotate commands' commands "$@"
+    _describe -t commands 'bit-pdf rotate commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__split_commands] )) ||
-_noble-pdf__subcmd__split_commands() {
+(( $+functions[_bit-pdf__subcmd__split_commands] )) ||
+_bit-pdf__subcmd__split_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf split commands' commands "$@"
+    _describe -t commands 'bit-pdf split commands' commands "$@"
 }
-(( $+functions[_noble-pdf__subcmd__text_commands] )) ||
-_noble-pdf__subcmd__text_commands() {
+(( $+functions[_bit-pdf__subcmd__text_commands] )) ||
+_bit-pdf__subcmd__text_commands() {
     local commands; commands=()
-    _describe -t commands 'noble-pdf text commands' commands "$@"
+    _describe -t commands 'bit-pdf text commands' commands "$@"
 }
 
-if [ "$funcstack[1]" = "_noble-pdf" ]; then
-    _noble-pdf "$@"
+if [ "$funcstack[1]" = "_bit-pdf" ]; then
+    _bit-pdf "$@"
 else
-    compdef _noble-pdf noble-pdf
+    compdef _bit-pdf bit-pdf
 fi

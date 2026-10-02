@@ -1,14 +1,14 @@
-# Noble PDF Reader 📄⚡
+# Bit PDF Reader 📄⚡
 
 > **High-Performance Terminal & CLI PDF Management and Processing Swiss Army Knife for Linux**
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Rust: 1.70+](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org)
 [![Platform: Linux](https://img.shields.io/badge/platform-Linux-lightgrey.svg)](https://kernel.org)
-[![Zero GUI Dependencies](https://img.shields.io/badge/gui-zero_dependencies-brightgreen.svg)]()
+[![Zero GUI Dependencies](https://img.shields.io/badge/gui-zero_dependencies-brightgreen.svg)](<>)
 [![Author: MI_Syafaudin](https://img.shields.io/badge/author-MI__Syafaudin-blueviolet.svg)](https://github.com/MI-Syafaudin)
 
-**Noble PDF Reader** (CLI binary: `noble-pdf`, alias: `pdfx`) is a blazingly fast, modern Rust-native PDF processor and viewer built specifically for Linux environments (CachyOS, Arch Linux, Ubuntu, Debian, Fedora, openSUSE). It provides a **Dual-Mode Interface**:
+**Bit PDF Reader** (CLI binary: `bit-pdf`, alias: `pdfx`) is a blazingly fast, modern Rust-native PDF processor and viewer built specifically for Linux environments (CachyOS, Arch Linux, Ubuntu, Debian, Fedora, openSUSE). It provides a **Dual-Mode Interface**:
 
 1. **Interactive TUI**: A dual-pane terminal viewer powered by [Ratatui](https://ratatui.rs) and [Crossterm](https://github.com/crossterm-rs/crossterm) with 24-bit TrueColor half-block rendering, fast text reading, fuzzy file browsing, bookmarks, and in-document search.
 2. **Scriptable CLI**: A POSIX-compliant command-line utility with atomic operations, structured JSON output (`--json`), and predictable exit codes designed for piping and shell automation.
@@ -17,9 +17,9 @@
 
 ## 🎖️ Credits & Acknowledgements
 
-Noble PDF Reader was conceived, designed, and developed by **MI_Syafaudin** ([@MI-Syafaudin](https://github.com/MI-Syafaudin)).
+Bit PDF Reader was conceived, designed, and developed by **MI_Syafaudin** ([@MI-Syafaudin](https://github.com/MI-Syafaudin)).
 
-Special gratitude and credit is extended to the incredible Rust open-source ecosystem whose foundation makes Noble PDF Reader possible:
+Special gratitude and credit is extended to the incredible Rust open-source ecosystem whose foundation makes Bit PDF Reader possible:
 
 - **[Ratatui](https://ratatui.rs) & [Crossterm](https://github.com/crossterm-rs/crossterm)**: For enabling rich, reactive, dual-pane terminal user interfaces and cross-platform terminal raw-mode control.
 - **[lopdf](https://github.com/J-F-Liu/lopdf)**: For providing pure-Rust PDF document manipulation, object graph navigation, compression, and structural operations without C++ dependencies.
@@ -48,8 +48,8 @@ Special gratitude and credit is extended to the incredible Rust open-source ecos
 
 ```
                           ┌───────────────────────────┐
-                          │     Noble PDF Reader      │
-                          │ (noble-pdf / pdfx CLI)    │
+                          │     Bit PDF Reader      │
+                          │ (bit-pdf / pdfx CLI)    │
                           └─────────────┬─────────────┘
                                         │
            ┌────────────────────────────┼────────────────────────────┐
@@ -83,52 +83,101 @@ Special gratitude and credit is extended to the incredible Rust open-source ecos
 
 ## 📦 Installation
 
+> **Note**: Bit PDF Reader is distributed exclusively via GitHub. No third-party AUR, PPA, or crates.io registries are required.
+
+### ⚡ Universal 1-Line Installer (Recommended)
+
+Automatically detects your distribution, downloads the matching pre-built release binary from GitHub (or compiles with Cargo), and sets up manpages and shell completions:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/MI-Syafaudin/bit-pdf-reader/master/install.sh | bash
+# or via wget:
+wget -qO- https://raw.githubusercontent.com/MI-Syafaudin/bit-pdf-reader/master/install.sh | bash
+```
+
+---
+
 ### Arch Linux / CachyOS
 
-Using the included PKGBUILD:
+**Option A: Pre-built Pacman Package (GitHub Releases)**
+
 ```bash
-git clone https://github.com/noble-pdf/noble-pdf-reader.git
-cd noble-pdf-reader/dist/arch
+curl -LO https://github.com/MI-Syafaudin/bit-pdf-reader/releases/latest/download/bit-pdf-x86_64.pkg.tar.zst
+sudo pacman -U bit-pdf-x86_64.pkg.tar.zst
+```
+
+**Option B: Build from GitHub using PKGBUILD**
+
+```bash
+git clone https://github.com/MI-Syafaudin/bit-pdf-reader.git
+cd bit-pdf-reader/dist/arch
 makepkg -si
 ```
 
-Or using an AUR helper:
-```bash
-paru -S noble-pdf
-# or
-yay -S noble-pdf
-```
+---
 
 ### Ubuntu / Debian
 
-Build and install `.deb` package:
+**Option A: Pre-built Debian Package (GitHub Releases)**
+
 ```bash
-git clone https://github.com/noble-pdf/noble-pdf-reader.git
-cd noble-pdf-reader
-dpkg-buildpackage -us -uc -b
-sudo dpkg -i ../noble-pdf_*.deb
+curl -LO https://github.com/MI-Syafaudin/bit-pdf-reader/releases/latest/download/bit-pdf_amd64.deb
+sudo dpkg -i bit-pdf_amd64.deb
 ```
+
+**Option B: Build `.deb` from GitHub Source**
+
+```bash
+git clone https://github.com/MI-Syafaudin/bit-pdf-reader.git
+cd bit-pdf-reader
+dpkg-buildpackage -us -uc -b
+sudo dpkg -i ../bit-pdf_*.deb
+```
+
+---
 
 ### Fedora / RHEL
 
-Build using RPM spec:
+**Option A: Direct RPM Install (GitHub Releases)**
+
 ```bash
-git clone https://github.com/noble-pdf/noble-pdf-reader.git
-cd noble-pdf-reader
-rpmbuild -ba dist/fedora/noble-pdf.spec
+sudo dnf install https://github.com/MI-Syafaudin/bit-pdf-reader/releases/latest/download/bit-pdf.x86_64.rpm
 ```
+
+**Option B: Build RPM from GitHub Source**
+
+```bash
+git clone https://github.com/MI-Syafaudin/bit-pdf-reader.git
+cd bit-pdf-reader
+rpmbuild -ba dist/fedora/bit-pdf.spec
+```
+
+---
 
 ### Via Cargo (Any Linux)
 
-Ensure you have Rust 1.70+ installed:
+Install directly from the GitHub repository into `~/.cargo/bin` (requires Rust 1.70+, no crates.io account needed):
+
 ```bash
-cargo install --locked --path crates/pdfx-cli
+cargo install --git https://github.com/MI-Syafaudin/bit-pdf-reader.git pdfx-cli
 ```
-*Note: This installs both `noble-pdf` and `pdfx` binaries into `~/.cargo/bin`.*
+
+---
+
+### Standalone Pre-compiled Binary Tarball
+
+For any 64-bit Linux distribution:
+
+```bash
+curl -fsSL https://github.com/MI-Syafaudin/bit-pdf-reader/releases/latest/download/bit-pdf-linux-x86_64.tar.gz | tar -xz
+sudo install -m 755 bit-pdf pdfx /usr/local/bin/
+```
+
 
 ### Optional Dependencies (OCR)
 
 To enable optical character recognition for scanned PDFs:
+
 - **Arch / CachyOS**: `sudo pacman -S tesseract tesseract-data-eng tesseract-data-ind`
 - **Ubuntu / Debian**: `sudo apt install tesseract-ocr tesseract-ocr-eng tesseract-ocr-ind`
 - **Fedora**: `sudo dnf install tesseract tesseract-langpack-eng tesseract-langpack-ind`
@@ -138,172 +187,198 @@ To enable optical character recognition for scanned PDFs:
 ## 🖥️ TUI Navigation & Keybindings
 
 Launch the interactive reader:
-```bash
-noble-pdf open document.pdf
-# or simply launch the dashboard:
-noble-pdf
-```
-*(You can also use the shorthand alias `pdfx`)*
 
-| Key | Action |
-|:---|:---|
-| `j` / `↓` | Scroll text down / Next item |
-| `k` / `↑` | Scroll text up / Previous item |
-| `h` / `l` | Previous page / Next page |
-| `PgDn` / `Space` | Jump forward one page |
-| `PgUp` / `Shift+Space` | Jump backward one page |
-| `Home` / `End` | Jump to first / last page |
-| `Tab` | Switch focus between panes and tabs |
-| `g` | Open **Jump to Page** dialog |
-| `/` | In-document search (highlights matches in yellow) |
-| `n` / `N` | Next / previous search match |
-| `b` | Toggle bookmark on current page |
-| `f` | Open interactive file picker dialog |
-| `i` | Show document metadata modal |
-| `?` | Show interactive help & credits screen |
-| `Esc` | Close active dialog / dismiss search |
-| `q` | Quit application |
+```bash
+bit-pdf open document.pdf
+# or simply launch the dashboard:
+bit-pdf
+```
+
+_(You can also use the shorthand alias `pdfx`)_
+
+| Key                    | Action                                            |
+| :--------------------- | :------------------------------------------------ |
+| `j` / `↓`              | Scroll text down / Next item                      |
+| `k` / `↑`              | Scroll text up / Previous item                    |
+| `h` / `l`              | Previous page / Next page                         |
+| `PgDn` / `Space`       | Jump forward one page                             |
+| `PgUp` / `Shift+Space` | Jump backward one page                            |
+| `Home` / `End`         | Jump to first / last page                         |
+| `Tab`                  | Switch focus between panes and tabs               |
+| `g`                    | Open **Jump to Page** dialog                      |
+| `/`                    | In-document search (highlights matches in yellow) |
+| `n` / `N`              | Next / previous search match                      |
+| `b`                    | Toggle bookmark on current page                   |
+| `f`                    | Open interactive file picker dialog               |
+| `i`                    | Show document metadata modal                      |
+| `?`                    | Show interactive help & credits screen            |
+| `Esc`                  | Close active dialog / dismiss search              |
+| `q`                    | Quit application                                  |
 
 ---
 
 ## ⌨️ CLI Usage & Command Reference
 
-Both `noble-pdf` and `pdfx` can be used interchangeably:
+Both `bit-pdf` and `pdfx` can be used interchangeably:
 
 ### 1. Document Information
+
 Display metadata, page count, PDF version, encryption, and page dimensions:
+
 ```bash
-noble-pdf info document.pdf
-noble-pdf info document.pdf --json
+bit-pdf info document.pdf
+bit-pdf info document.pdf --json
 ```
 
 ### 2. Merging PDFs
+
 Combine multiple PDF files into a single document:
+
 ```bash
-noble-pdf merge cover.pdf chapter1.pdf chapter2.pdf -o full_book.pdf
+bit-pdf merge cover.pdf chapter1.pdf chapter2.pdf -o full_book.pdf
 ```
 
 ### 3. Splitting PDFs
+
 Split a document into individual pages or bursts of $N$ pages:
+
 ```bash
 # Split into single pages: doc-page-001.pdf, doc-page-002.pdf, ...
-noble-pdf split document.pdf -o ./output_dir/
+bit-pdf split document.pdf -o ./output_dir/
 
 # Split into chunks of 5 pages:
-noble-pdf split document.pdf --chunk-size 5 -o ./chunks/
+bit-pdf split document.pdf --chunk-size 5 -o ./chunks/
 ```
 
 ### 4. Page Extraction
+
 Extract specific pages or ranges using standard range syntax:
+
 ```bash
-noble-pdf extract document.pdf -p "1-3,5,10-15" -o extracted.pdf
+bit-pdf extract document.pdf -p "1-3,5,10-15" -o extracted.pdf
 ```
 
 ### 5. Page Rotation
+
 Rotate all or specific pages clockwise (90, 180, 270 degrees):
+
 ```bash
 # Rotate entire document 90 degrees
-noble-pdf rotate document.pdf -a 90 -o rotated.pdf
+bit-pdf rotate document.pdf -a 90 -o rotated.pdf
 
 # Rotate only pages 2 and 4 by 180 degrees
-noble-pdf rotate document.pdf -a 180 -p "2,4" -o rotated.pdf
+bit-pdf rotate document.pdf -a 180 -p "2,4" -o rotated.pdf
 ```
 
 ### 6. Page Deletion
+
 Remove unwanted pages from a document:
+
 ```bash
-noble-pdf delete document.pdf -p "2,5-7" -o clean.pdf
+bit-pdf delete document.pdf -p "2,5-7" -o clean.pdf
 ```
 
 ### 7. Page Reordering
+
 Arbitrarily reorder or duplicate pages:
+
 ```bash
-noble-pdf reorder document.pdf -s "3,2,1,4-10" -o reordered.pdf
+bit-pdf reorder document.pdf -s "3,2,1,4-10" -o reordered.pdf
 ```
 
 ### 8. Text Extraction
+
 Extract plain text from document pages to stdout or a text file:
+
 ```bash
 # Dump text to stdout
-noble-pdf text document.pdf
+bit-pdf text document.pdf
 
 # Extract text from specific pages to file
-noble-pdf text document.pdf -p "1-5" -o output.txt
+bit-pdf text document.pdf -p "1-5" -o output.txt
 ```
 
 ### 9. Compression & Optimization
+
 Remove unused objects, duplicate streams, and compress content streams:
+
 ```bash
-noble-pdf compress heavy.pdf -o optimized.pdf
+bit-pdf compress heavy.pdf -o optimized.pdf
 ```
 
 ### 10. OCR (Optical Character Recognition)
+
 Recognize text in scanned documents or generate searchable sandwich PDFs:
+
 ```bash
 # Extract text via OCR
-noble-pdf ocr scanned.pdf -l eng -o text
+bit-pdf ocr scanned.pdf -l eng -o text
 
 # Produce a searchable PDF
-noble-pdf ocr scanned.pdf -l eng+ind -o searchable.pdf
+bit-pdf ocr scanned.pdf -l eng+ind -o searchable.pdf
 ```
 
 ### 11. Cache & History Management
+
 Inspect and clear local database caches and temporary files:
+
 ```bash
 # Inspect storage footprint
-noble-pdf clean --stats
+bit-pdf clean --stats
 
 # Wipe recent files, bookmarks, and staging residue
-noble-pdf clean --all
+bit-pdf clean --all
 ```
 
 ### 12. Shell Completions
+
 Generate tab-completion scripts for your active shell:
+
 ```bash
 # Bash
-source <(noble-pdf completions bash)
+source <(bit-pdf completions bash)
 
 # Zsh
-noble-pdf completions zsh > "${fpath[1]}/_noble-pdf"
+bit-pdf completions zsh > "${fpath[1]}/_bit-pdf"
 
 # Fish
-noble-pdf completions fish > ~/.config/fish/completions/noble-pdf.fish
+bit-pdf completions fish > ~/.config/fish/completions/bit-pdf.fish
 ```
 
 ---
 
 ## 🚦 POSIX Exit Codes
 
-Noble PDF Reader adheres strictly to POSIX process exit conventions for deterministic error handling:
+Bit PDF Reader adheres strictly to POSIX process exit conventions for deterministic error handling:
 
-| Exit Code | Constant | Meaning |
-|:---:|:---|:---|
-| `0` | `SUCCESS` | Operation completed successfully |
-| `1` | `GENERAL_ERROR` | Unclassified runtime error |
-| `2` | `INVALID_ARGS` | Invalid CLI options, range syntax, or missing arguments |
-| `3` | `INPUT_ERROR` | File not found, permission denied, or unreadable source file |
-| `4` | `OUTPUT_ERROR` | Target directory unwritable or disk full |
-| `5` | `PDF_ERROR` | Corrupted, password-protected, or unparseable PDF stream |
-| `6` | `OCR_ERROR` | Tesseract binary missing, language pack absent, or OCR failed |
-| `7` | `CANCELLED` | Operation cancelled by user signal (SIGINT / Ctrl+C) |
+| Exit Code | Constant        | Meaning                                                       |
+| :-------: | :-------------- | :------------------------------------------------------------ |
+|    `0`    | `SUCCESS`       | Operation completed successfully                              |
+|    `1`    | `GENERAL_ERROR` | Unclassified runtime error                                    |
+|    `2`    | `INVALID_ARGS`  | Invalid CLI options, range syntax, or missing arguments       |
+|    `3`    | `INPUT_ERROR`   | File not found, permission denied, or unreadable source file  |
+|    `4`    | `OUTPUT_ERROR`  | Target directory unwritable or disk full                      |
+|    `5`    | `PDF_ERROR`     | Corrupted, password-protected, or unparseable PDF stream      |
+|    `6`    | `OCR_ERROR`     | Tesseract binary missing, language pack absent, or OCR failed |
+|    `7`    | `CANCELLED`     | Operation cancelled by user signal (SIGINT / Ctrl+C)          |
 
 ---
 
 ## ⚙️ Configuration & Storage
 
-Noble PDF Reader respects standard XDG directory specifications:
+Bit PDF Reader respects standard XDG directory specifications:
 
-| Resource | Path | Description |
-|:---|:---|:---|
+| Resource     | Path                          | Description                                                  |
+| :----------- | :---------------------------- | :----------------------------------------------------------- |
 | **Database** | `~/.local/share/pdfx/pdfx.db` | SQLite WAL database for bookmarks, recent files, job history |
-| **Config** | `~/.config/pdfx/config.toml` | User preferences and keybindings |
-| **Cache** | `~/.cache/pdfx/` | Temporary OCR renders and raster tiles |
+| **Config**   | `~/.config/pdfx/config.toml`  | User preferences and keybindings                             |
+| **Cache**    | `~/.cache/pdfx/`              | Temporary OCR renders and raster tiles                       |
 
 ---
 
 ## 🧪 Testing & Verification
 
-The Noble PDF Reader workspace contains 79+ comprehensive unit and end-to-end integration tests:
+The Bit PDF Reader workspace contains 79+ comprehensive unit and end-to-end integration tests:
 
 ```bash
 # Run all tests across all crates
@@ -323,7 +398,7 @@ cargo fmt --check
 
 ## 📄 License
 
-Noble PDF Reader is distributed under the terms of the **Apache License 2.0**.
+Bit PDF Reader is distributed under the terms of the **Apache License 2.0**.
 See [LICENSE](LICENSE) for full details.
 
-Copyright (c) 2026 MI_Syafaudin and Noble PDF Reader Contributors.
+Copyright (c) 2026 MI_Syafaudin and Bit PDF Reader Contributors.

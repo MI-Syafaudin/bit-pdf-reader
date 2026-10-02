@@ -1,11 +1,11 @@
-.TH NOBLE-PDF 1 "October 2026" "Noble PDF Reader 0.1.0" "User Commands"
+.TH BIT-PDF 1 "October 2026" "Bit PDF Reader 0.1.0" "User Commands"
 .SH NAME
-noble-pdf, pdfx \- High-performance Terminal & CLI PDF Swiss Army Knife for Linux
+bit-pdf, pdfx \- High-performance Terminal & CLI PDF Swiss Army Knife for Linux
 .SH SYNOPSIS
-.B noble-pdf
+.B bit-pdf
 [\fIOPTIONS\fR] [\fICOMMAND\fR]
 .SH DESCRIPTION
-\fBNoble PDF Reader\fR (binary: \fBnoble-pdf\fR, alias: \fBpdfx\fR) is a lightweight, memory-efficient, keyboard-friendly Terminal & CLI application written in modern Rust for Linux.
+\fBBit PDF Reader\fR (binary: \fBbit-pdf\fR, alias: \fBpdfx\fR) is a lightweight, memory-efficient, keyboard-friendly Terminal & CLI application written in modern Rust for Linux.
 It provides comprehensive PDF management including merging, splitting, extraction, rotation, page reordering, compression, text extraction, OCR, and an interactive Ratatui TUI viewer.
 .SH OPTIONS
 .TP
@@ -64,25 +64,25 @@ Generate shell completion scripts (bash, zsh, fish, powershell).
 .PP
 Open interactive terminal viewer:
 .RS
-.B noble-pdf open document.pdf
+.B bit-pdf open document.pdf
 .RE
 .PP
 Inspect document structure in JSON:
 .RS
-.B noble-pdf \-\-json info report.pdf
+.B bit-pdf \-\-json info report.pdf
 .RE
 .PP
 Merge multiple documents:
 .RS
-.B noble-pdf merge ch1.pdf ch2.pdf ch3.pdf \-o complete_book.pdf
+.B bit-pdf merge ch1.pdf ch2.pdf ch3.pdf \-o complete_book.pdf
 .RE
 .PP
 Extract text from odd pages to standard output:
 .RS
-.B noble-pdf text document.pdf \-p odd
+.B bit-pdf text document.pdf \-p odd
 .RE
 .SH AUTHORS
-Noble PDF Reader was created and developed by MI_Syafaudin (https://github.com/MI-Syafaudin).
-Contributors: Noble PDF Reader Contributors (Apache-2.0 License).
+Bit PDF Reader was created and developed by MI_Syafaudin (https://github.com/MI-Syafaudin).
+Contributors: Bit PDF Reader Contributors (Apache-2.0 License).
 .SH CREDITS
 Powered by open-source technologies: Ratatui, Crossterm, lopdf, Tesseract OCR, Rusqlite, Clap, and Rayon.

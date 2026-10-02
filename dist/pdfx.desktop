@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
-Name=Noble PDF Reader
-Comment=Noble PDF Reader — High-Performance Terminal & CLI PDF Swiss Army Knife
+Name=Bit PDF Reader
+Comment=Bit PDF Reader — High-Performance Terminal & CLI PDF Swiss Army Knife
 GenericName=PDF Viewer and Processor
 Exec=pdfx open %f
 Icon=application-pdf

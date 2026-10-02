@@ -13,7 +13,7 @@ pub fn render_help_modal(f: &mut Frame, area: Rect) {
 
     let help_text = vec![
         Line::from(vec![Span::styled(
-            "Noble PDF Reader — Navigation & Shortcuts",
+            "Bit PDF Reader — Navigation & Shortcuts",
             Style::default()
                 .fg(Color::Cyan)
                 .add_modifier(Modifier::BOLD),
@@ -69,7 +69,7 @@ pub fn render_help_modal(f: &mut Frame, area: Rect) {
         Line::from("──────────────────────────────────────────────────"),
         Line::from(vec![
             Span::styled(
-                "Noble PDF Reader v0.1.0",
+                "Bit PDF Reader v0.1.0",
                 Style::default()
                     .fg(Color::Cyan)
                     .add_modifier(Modifier::BOLD),

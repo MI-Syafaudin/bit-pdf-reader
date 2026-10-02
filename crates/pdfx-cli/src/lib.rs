@@ -120,7 +120,7 @@ pub fn run_cli() {
         Some(Commands::Completions { shell }) => {
             use clap::CommandFactory;
             let mut cmd = Cli::command();
-            clap_complete::generate(shell, &mut cmd, "noble-pdf", &mut std::io::stdout());
+            clap_complete::generate(shell, &mut cmd, "bit-pdf", &mut std::io::stdout());
             ("completions", Ok(()))
         }
         None => {

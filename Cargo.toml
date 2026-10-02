@@ -12,10 +12,10 @@ members = [
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-authors = ["MI_Syafaudin <https://github.com/MI-Syafaudin>", "Noble PDF Reader Contributors"]
+authors = ["MI_Syafaudin <https://github.com/MI-Syafaudin>", "Bit PDF Reader Contributors"]
 license = "Apache-2.0"
-repository = "https://github.com/MI-Syafaudin/noble-pdf-reader"
-homepage = "https://github.com/MI-Syafaudin/noble-pdf-reader"
+repository = "https://github.com/MI-Syafaudin/bit-pdf-reader"
+homepage = "https://github.com/MI-Syafaudin/bit-pdf-reader"
 
 
 [workspace.dependencies]
